@@ -1,0 +1,33 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-100 text-black text-sm mt-16">
+      <div className="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+        <div className="flex flex-col items-start">
+          <Image src="/logo.png" alt="Logo" width={100} height={50} className="mb-2" />
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+        <div>
+          <h3 className="font-bold mb-2">Infos utiles</h3>
+          <ul className="space-y-1">
+            <li><Link href="/pages/mentions-legales">Mentions légales</Link></li>
+            <li><Link href="/pages/cgv">Conditions générales de vente</Link></li>
+            <li><Link href="/pages/politique-confidentialite">Politique de confidentialité</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold mb-2">Contact</h3>
+          <p>Sonia Platon</p>
+          <p>+33 6 12 34 56 78</p>
+          <p>soniaplaton@gmail.com</p>
+          <p>Lundi au Samedi de 10h à 18h</p>
+        </div>
+      </div>
+      <div className="text-center py-4 border-t text-xs">
+        &copy; 2025, Sonia Platon - SIREN 00000. Tous droits réservés. Créé par <a href="https://www.lianecc.com" className="underline">LianeCC</a>
+      </div>
+    </footer>
+  );
+}

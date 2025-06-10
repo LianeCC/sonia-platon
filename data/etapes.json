@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Prise de rendez-vous",
+    "text": "Complétez notre formulaire en ligne et je vous recontacte au plus vite pour fixer un rendez-vous ",
+    "icon": "/icones/rdv-icone.png"
+  },
+  {
+    "title": "Préparation",
+    "text": "Je vous envoie un e-mail avec tous les détails pour préparer au mieux notre rendez-vous",
+    "icon": "/icones/preparation-icone.png"
+  },
+  {
+    "title": "Le jour même",
+    "text": "Nous faisons le point sur vos attentes & besoins, je prends les mesures nécessaires, effecture un contrôle statique et dynamique si possible",
+    "icon": "/icones/jour-icone.png"
+  },
+  {
+    "title": "Visite de contrôle",
+    "text": "Selon la situation, je peux être amenée à faire une visite de contrôle, notamment dans le cas d’achat d’une selle.",
+    "icon": "/icones/verification-icone.png"
+  }
+]
