@@ -4,6 +4,7 @@ import Sectionwhite from "../../components/Sectionwhite";
 import Card from "../../components/Card";
 import FAQ from "../../components/Faq";
 import etapes from "@/data/etapes.json";
+import MapSection from "../../components/MapSection";
 
 export default function Accueil() {
   return (
@@ -29,6 +30,8 @@ export default function Accueil() {
         <br />
         <p>Un couple en harmonie, c’est avant tout du confort et de la sérénité. Je suis convaincue que sans une selle adaptée, il est impossible d’obtenir des performances optimales. Mon rôle est de vous aider à construire cette connexion essentielle, où le bien-être précède toujours la performance.</p>
       </Section>
+
+      <MapSection />
     </>
   );
 }

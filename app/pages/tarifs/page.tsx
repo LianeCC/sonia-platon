@@ -1,10 +1,11 @@
 // app/pages/tarifs/page.tsx
 import Separator from "@/app/components/Separator";
-import Section2 from "../../components/Sectionwhite";
+import Sectionwhite from "../../components/Sectionwhite";
+import MapSection from "../../components/MapSection";
 
 export default function TarifsPage() {
   return (
-    <Section2 title="Services et Tarifs 2025">
+    <><Sectionwhite title="Services et Tarifs 2025">
       <div className="space-y-8 text-center">
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Consultation en écurie</h3>
@@ -81,11 +82,11 @@ export default function TarifsPage() {
         </div>
 
         <Separator />
-             
+
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Thermographie infrarouge</h3>
           <p>
-            Bilan thermique pour détecter asymétries ou zones sensibles. 
+            Bilan thermique pour détecter asymétries ou zones sensibles.
           </p>
           <p><strong>Tarif variable</strong></p>
         </div>
@@ -96,8 +97,10 @@ export default function TarifsPage() {
             Sur sélection de matériel adapté au saddle fitting.
           </p>
           <p><strong>Tarif sur présentaiton</strong></p>
-        </div>        
+        </div>
       </div>
-    </Section2>
+    </Sectionwhite>
+    <MapSection /></>
+
   );
 }

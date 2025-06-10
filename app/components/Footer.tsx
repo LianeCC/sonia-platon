@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="text-black text-sm mt-16">
+    <footer className="text-black text-sm border-t">
       <div className="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
         <div className="flex flex-col items-start">
           <Image src="/images/Logo.jpg" alt="Logo" width={50} height={50} className="mb-2" />
@@ -27,7 +27,7 @@ export default function Footer() {
           <p>Lundi au Samedi de 10h à 18h</p>
         </div>
       </div>
-      <div className="text-center py-4 border-t text-xs">
+      <div className="text-center pb-4 text-xs">
         &copy; 2025, Sonia Platon - SIREN 00000. Tous droits réservés. Créé par <a href="https://www.lianecc.com" className="underline">LianeCC</a>
       </div>
     </footer>
