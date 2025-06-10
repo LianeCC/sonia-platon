@@ -3,11 +3,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-black text-sm mt-16">
+    <footer className="text-black text-sm mt-16">
       <div className="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
         <div className="flex flex-col items-start">
-          <Image src="/logo.png" alt="Logo" width={100} height={50} className="mb-2" />
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <Image src="/images/Logo.jpg" alt="Logo" width={50} height={50} className="mb-2" />
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <Image src="/icones/facebook-icone.png" alt="Facebook Icon" width={50} height={24} className="mb-2" />
+          </a>
         </div>
         <div>
           <h3 className="font-bold mb-2">Infos utiles</h3>
