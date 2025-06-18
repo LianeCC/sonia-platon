@@ -16,7 +16,7 @@ export default function TarifsPage() {
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-[#001845]">Consultation centre équestre</h3>
+          <h3 className="text-xl font-semibold text-[#001845]">Consultation centre équestre / Piquet professionnel</h3>
           <p>
             Optimisation du matériel présent, essais dynamiques. <br /><strong>Sur devis</strong>
           </p>
@@ -24,8 +24,8 @@ export default function TarifsPage() {
 
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Forfait 4 saisons</h3>
-          <p>
-            4 consultations annuelles pour suivi personnalisé.
+          <p className="max-w-2xl mx-auto">
+            4 consultations réparties sur l&apos;année pour que le matériel suive l&apos;évolution de votre cheval, particulièrement indiqué pour le cheval de compétition (avant les concours importants par exemple), pour le jeune cheval qui change énormément la première année de travail, ou pour une remise en route dans le confort. 
             <br /><strong>270€</strong> (au lieu de 320€)
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function TarifsPage() {
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Essais de selles</h3>
           <p>
-            Inclus avec consultation ou <strong>50€</strong> (déplacement complémentaire)
+            <strong>Gratuit</strong> si prévu lors ou en complément d’une consultation, < br/>ou <strong>50€</strong> si nouveau déplacement à prévoir dans les deux mois suivants une consultation.
           </p>
         </div>
 
@@ -50,17 +50,16 @@ export default function TarifsPage() {
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Échange d&apos;arcade</h3>
           <p>
-            Offert lors de la consultation pour les marques les plus courantes.
-            <br /><strong>0€</strong>
+            <strong>Offert</strong> lors de la consultation pour les marques les plus courantes < br/>ou arcade supplémentaire facturée au <strong>tarif du fabricant</strong>.
           </p>
         </div>
 
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Reflock partiel</h3>
           <p>
-            Modification laine pour amorti et équilibrage.
+            Modification des panneaux en laine pour amorti et équilibrage.
             <br /><strong>30€</strong> (panneaux vissés, à l&apos;écurie)<br />
-            <strong>+80€</strong> (panneaux cousus, à l&apos;atelier)
+            <strong>+ 80€</strong> supplémentaires si panneaux cousus, se fait à mon atelier
           </p>
         </div>
 
@@ -69,15 +68,15 @@ export default function TarifsPage() {
           <p>
             Remplacement de la laine, ajustements complets.
             <br /><strong>100€</strong> (panneaux vissés, à l&apos;écurie)<br />
-            <strong>+80€</strong> (panneaux cousus, à l&apos;atelier)
+            <strong>+80€</strong> supplémentaires si panneaux cousus, se fait à mon atelier
           </p>
         </div>
 
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Ouverture d&apos;arcade par presse</h3>
           <p>
-            ❄️ À froid : <strong>60€</strong> (à l&apos;écurie si prévu)<br />
-            🔥 À chaud : <strong>80€</strong> (à l&apos;atelier)
+            ❄️ À froid : <strong>60€</strong> (à l&apos;écurie si prévu en avance, sinon à mon atelier)<br />
+            🔥 À chaud : <strong>80€</strong> (à mon atelier)
           </p>
         </div>
 
@@ -85,16 +84,16 @@ export default function TarifsPage() {
 
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Thermographie infrarouge</h3>
-          <p>
-            Bilan thermique pour détecter asymétries ou zones sensibles.
+          <p className="max-w-2xl mx-auto">
+            Bilan des écarts de température détectables : cette prestation n&apos;a pas pour but d’adapter une selle, ni de poser un diagnostic vétérinaire, mais peut permettre de détecter une asymétrie révélée par le matériel (selle qui tourne) ou donner des écarts de valeurs chiffres en cas de boiterie, de locomotion perturbée etc.
           </p>
-          <p><strong>Tarif variable</strong></p>
+          <p><strong>Tarif variable suivant la zone et le nombre de clichés</strong></p>
         </div>
 
         <div>
           <h3 className="text-xl font-semibold text-[#001845]">Dépôt-vente de matériel</h3>
-          <p>
-            Sur sélection de matériel adapté au saddle fitting.
+          <p className="max-w-2xl mx-auto">
+            Possible pour selles, tapis, sangles qui ont des caractéristiques intéressantes pour le saddle fitting (selles à matelassures laine uniquement par exemple), évaluation de votre matériel à vendre, prise en charge si accord pour dépôt-vente.
           </p>
           <p><strong>Tarif sur présentaiton</strong></p>
         </div>

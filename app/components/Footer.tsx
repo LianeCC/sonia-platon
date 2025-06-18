@@ -4,12 +4,21 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="text-black text-sm border-t">
-      <div className="container mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+      <div className="container mx-auto py-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8 px-4">
         <div className="flex flex-row sm:flex-col items-center sm:items-start gap-4 justify-center sm:justify-start">
           <Image src="/images/Logo.JPG" alt="Logo" width={50} height={50} />
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <Image src="/icones/facebook-icone.png" alt="Facebook Icon" width={50} height={24} />
           </a>
+        </div>
+        <div className="text-center md:text-left">
+          <h3 className="font-bold mb-2">Menu</h3>
+          <ul className="space-y-1">
+            <li><Link href="/pages/saddle-fitting">Le Saddle-fitting en détail</Link></li>
+            <li><Link href="/pages/tarifs">Tarifs</Link></li>
+            <li><Link href="/pages/rendez-vous">Prendre Rendez-vous</Link></li>
+            <li><Link href="/pages/Boutique">Boutique</Link></li>
+          </ul>
         </div>
         <div className="text-center md:text-left">
           <h3 className="font-bold mb-2">Infos utiles</h3>

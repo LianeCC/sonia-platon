@@ -8,13 +8,13 @@ export default function Hero() {
       <p className="text-xl sm:text-2xl md:text-4xl mt-2 text-center">Saddle fitting</p>
       <div className="mt-6 flex flex-col sm:flex-row gap-4">
         <a
-          href="/saddle-fitting"
+          href="/pages/saddle-fitting"
           className="bg-[#001845] px-6 py-3 text-white rounded-lg hover:bg-[#191970] transition-colors text-center"
         >
           Qu&apos;est-ce que le saddle fitting
         </a>
         <a
-          href="/rendez-vous"
+          href="/pages/rendez-vous"
           className="bg-[#0465c7] px-6 py-3 text-white rounded-lg hover:bg-[#135190] transition-colors text-center"
         >
           Prendre rendez-vous
