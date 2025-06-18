@@ -52,7 +52,7 @@ export default function HorseFormComplete({ index, disabled = false }: Props) {
 
   return (
     <fieldset className="mb-8 border border-gray-300 rounded p-4">
-      <legend className="font-semibold text-lg mb-4">Équidé {index + 1}</legend>
+      <legend className="font-semibold text-lg mb-4">Informations sur l&apos;équidé</legend>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
