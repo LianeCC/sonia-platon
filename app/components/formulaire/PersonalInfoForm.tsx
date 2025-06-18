@@ -1,51 +1,168 @@
 // app/components/formulaire/PersonalInfoForm.tsx
 'use client';
 
-import { useFormContext } from 'react-hook-form';
-import { FormValues } from '@/types/form-types';
+import { useFormContext, useWatch } from 'react-hook-form';
 
 type Props = {
   onNext: () => void;
 };
 
 export default function PersonalInfoForm({ onNext }: Props) {
-  const { register, handleSubmit } = useFormContext<FormValues>();
+  const {
+    register,
+    trigger,
+    control,
+    formState: { errors },
+  } = useFormContext();
 
-  const onSubmit = () => {
-    onNext();
+  const adresseDiff = useWatch({ control, name: 'adresseDiff' });
+
+  const handleValidation = async () => {
+    const baseFields = [
+      'nom',
+      'prenom',
+      'taille',
+      'taillePantalon',
+      'telephone',
+      'email',
+      'adresse',
+      'ville',
+      'codePostal',
+      'nomLieu',
+    ];
+
+    const altFields = adresseDiff
+      ? ['lieuNom', 'lieuAdresse', 'lieuCodePostal', 'lieuVille', 'lieuPrecisions']
+      : [];
+
+    const isValid = await trigger([...baseFields, ...altFields]);
+    if (isValid) {
+      onNext();
+    }
   };
 
+  const renderError = (field: keyof typeof errors) =>
+    errors[field] ? (
+      <p className="text-red-500 text-sm">{errors[field]?.message as string}</p>
+    ) : null;
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mb-10">
-      <h2 className="text-xl font-semibold mb-4">Vos informations</h2>
+    <fieldset className="space-y-4 mb-10 border border-gray-300 rounded p-4">
+      <legend className="text-xl font-semibold mb-4">Vos informations</legend>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input {...register("nom")} placeholder="Nom" className="input" />
-        <input {...register("prenom")} placeholder="Prénom" className="input" />
-        <input {...register("taille")} type="number" placeholder="Taille (cm)" className="input" />
-        <input {...register("taillePantalon")} placeholder="Taille de pantalon" className="input" />
-        <input {...register("telephone")} placeholder="Téléphone" className="input" />
-        <input {...register("email")} type="email" placeholder="Email" className="input" />
-        <input {...register("adresse")} placeholder="Adresse" className="input" />
-        <input {...register("codePostal")} placeholder="Code Postal" className="input" />
-        <input {...register("ville")} placeholder="Ville" className="input" />
+        <div>
+          <input {...register('nom', { required: 'Champ obligatoire' })} className="input" placeholder="Nom" />
+          {renderError('nom')}
+        </div>
 
-        <label className="flex items-center gap-2 col-span-2">
-          <input type="checkbox" {...register("adresseDiff")} />
-          L&apos;adresse du rendez-vous est différente
-        </label>
+        <div>
+          <input {...register('prenom', { required: 'Champ obligatoire' })} className="input" placeholder="Prénom" />
+          {renderError('prenom')}
+        </div>
 
-        <input {...register("lieuNom")} placeholder="Nom du lieu" className="input" />
-        <input {...register("lieuAdresse")} placeholder="Adresse du lieu" className="input" />
-        <input {...register("lieuCodePostal")} placeholder="Code postal du lieu" className="input" />
-        <input {...register("lieuVille")} placeholder="Ville du lieu" className="input" />
-        <textarea {...register("lieuPrecisions")} placeholder="Précisions d'accès" className="input" />
+        <div>
+          <input {...register('taille', { required: 'Champ obligatoire' })} type="number" className="input" placeholder="Taille (cm)" />
+          {renderError('taille')}
+        </div>
+
+        <div>
+          <input {...register('taillePantalon', { required: 'Champ obligatoire' })} className="input" placeholder="Taille de pantalon" />
+          {renderError('taillePantalon')}
+        </div>
+
+        <div>
+          <input {...register('telephone', { required: 'Champ obligatoire' })} className="input" placeholder="Téléphone" />
+          {renderError('telephone')}
+        </div>
+
+        <div>
+          <input {...register('email', { required: 'Champ obligatoire' })} className="input" placeholder="Email" />
+          {renderError('email')}
+        </div>
+
+        <div className="md:col-span-2">
+          <input {...register('adresse', { required: 'Champ obligatoire' })} className="input" placeholder="Adresse" />
+          {renderError('adresse')}
+        </div>
+
+        <div>
+          <input {...register('ville', { required: 'Champ obligatoire' })} className="input" placeholder="Ville" />
+          {renderError('ville')}
+        </div>
+
+        <div>
+          <input {...register('codePostal', { required: 'Champ obligatoire' })} className="input" placeholder="Code postal" />
+          {renderError('codePostal')}
+        </div>
+
+        <div className="md:col-span-2">
+          <input {...register('nomLieu', { required: 'Champ obligatoire' })} className="input" placeholder="Nom du lieu (ex: Écurie des Pins)" />
+          {renderError('nomLieu')}
+        </div>
       </div>
 
-      <div className="text-center mt-6">
-        <button type="submit" className="bg-[#001845] text-white px-6 py-3 rounded hover:bg-[#003366] transition">
-          Valider mes informations
+      {/* Checkbox pour adresse différente */}
+      <div>
+        <label className="text-sm font-medium">Adresse de rendez-vous différente ?</label>
+        <input type="checkbox" {...register('adresseDiff')} className="ml-2" />
+      </div>
+
+      {/* Champs alternatifs visibles si coche */}
+      {adresseDiff && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <input
+              {...register('lieuNom', { required: 'Champ obligatoire' })}
+              placeholder="Nom du lieu"
+              className="input"
+            />
+            {renderError('lieuNom')}
+          </div>
+          <div>
+            <input
+              {...register('lieuAdresse', { required: 'Champ obligatoire' })}
+              placeholder="Adresse alternative"
+              className="input"
+            />
+            {renderError('lieuAdresse')}
+          </div>
+          <div>
+            <input
+              {...register('lieuCodePostal', { required: 'Champ obligatoire' })}
+              placeholder="Code postal alternatif"
+              className="input"
+            />
+            {renderError('lieuCodePostal')}
+          </div>
+          <div>
+            <input
+              {...register('lieuVille', { required: 'Champ obligatoire' })}
+              placeholder="Ville alternative"
+              className="input"
+            />
+            {renderError('lieuVille')}
+          </div>
+          <div className="md:col-span-2">
+            <input
+              {...register('lieuPrecisions', { required: 'Champ obligatoire' })}
+              placeholder="Précisions accès"
+              className="input"
+            />
+            {renderError('lieuPrecisions')}
+          </div>
+        </div>
+      )}
+
+      <div className="text-right mt-6">
+        <button
+          type="button"
+          onClick={handleValidation}
+          className="bg-[#001845] text-white px-4 py-2 rounded hover:bg-[#003366] transition"
+        >
+          Continuer
         </button>
       </div>
-    </form>
+    </fieldset>
   );
 }
